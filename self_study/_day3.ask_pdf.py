@@ -1,9 +1,8 @@
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.embeddings import OpenAIEmbeddings
-
+from langchain_community.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
 embeddings = HuggingFaceEmbeddings()
 
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
+
 db = FAISS.load_local("shower", embeddings=embeddings, allow_dangerous_deserialization=True)
 
 # 스트림
