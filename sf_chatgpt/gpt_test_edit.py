@@ -6,7 +6,8 @@ from langchain_community.vectorstores import Chroma, FAISS
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain.retrievers import BM25Retriever, EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+from langchain.retrievers import EnsembleRetriever
 
 import gradio as gr
 import random
@@ -19,7 +20,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # 문서 로드
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 
 # PDF 파일 로드
 file_path = "SPRI_AI_Brief_2023년12월호_F.pdf"
